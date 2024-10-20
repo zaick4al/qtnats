@@ -15,7 +15,6 @@ Unless required by applicable law or agreed to in writing, software distributed 
 #include <QFuture>
 #include <QUrl>
 #include <QMultiHash>
-#include <QSemaphore>
 
 #include <nats.h>
 
@@ -131,6 +130,7 @@ namespace QtNats {
         qint64 timeout = 5000;
     };
 
+
     class QTNATS_EXPORT Client : public QObject
     {
         Q_OBJECT
@@ -172,9 +172,6 @@ namespace QtNats {
 
     private:
         natsConnection* m_conn = nullptr;
-        QSemaphore semaphore;
-
-        static void closedConnectionHandler(natsConnection* nc, void* closure);
     };
     
     class QTNATS_EXPORT Subscription : public QObject

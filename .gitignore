@@ -5,10 +5,10 @@
 *.dylib
 
 # Folders
-.vs/
-build/
-build_qt6/
+build*/
 cmake-build*/
 install/
 html/
 !doc/html/
+
+src/qtnats_export.h
